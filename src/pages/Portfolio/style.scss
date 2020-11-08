@@ -1,0 +1,54 @@
+@import '../../common/commonStylesheet.scss';
+
+.homepage {
+  margin: 0 auto;
+  min-width: 500px;
+  max-width: 900px;
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    // background: darkblue;
+    position: absolute;
+    top: 220px;
+    &-left {
+      flex-shrink: 0;
+      margin-right: 100px;
+      > img {
+        height: 350px;
+        border-radius: 50%;
+        border: 1px solid white;
+      }
+    }
+    &-right {
+      // background: lightblue;
+      color: white;
+      // font-family: 'Comic Sans MS', cursive, sans-serif;
+      > h3 {
+        // margin-top: 30px;
+        font-size: 24px;
+        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      }
+      > p {
+        text-transform: capitalize;
+        margin-top: 50px;
+        font-size: 36px;
+        font-family: 'Arial Black', Gadget, sans-serif;
+      }
+      &-links {
+        display: flex;
+        margin-top: 50px;
+        > li {
+          margin-right: 20px;
+        }
+      }
+      &-button {
+        margin-top: 50px;
+        > button {
+          padding: 10px 20px;
+          background: #325eff;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

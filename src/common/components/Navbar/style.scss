@@ -1,0 +1,47 @@
+// @import '../commonStylesheet.scss';
+
+.navbar {
+  > nav {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 600px;
+    > ul {
+      // background: lightblue;
+      color: white;
+      display: flex;
+      height: 70px;
+      // border-bottom: 1px solid #cecece;
+      justify-content: space-between;
+      align-items: center;
+      li {
+        height: 100%;
+        // line-height: 50px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        border-top: 2px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          transition: all 0.2s ease-out;
+          opacity: 0.8;
+          // background: white;
+          color: #325eff;
+          border-top: 2px solid white;
+        }
+        svg {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    li > a {
+      > svg {
+        display: none;
+      }
+    }
+  }
+}
