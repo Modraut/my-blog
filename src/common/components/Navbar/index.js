@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 import logo from '../../assets/images/Navbar/logo.png';
 import './style.scss';
 import HomeIcon from '@material-ui/icons/Home';
@@ -16,10 +16,10 @@ export const Navbar = () => {
             <nav>
                 <ul>
                     {/* <li><img src={logo} alt="logo missing" /></li> */}
-                    <li><Link to="/"><HomeIcon /><span>Home</span></Link></li>
-                    <li><Link to="/portfolio"><AccountTreeIcon /><span>Portfolio</span></Link></li>
-                    <li><Link to={resume} target="_blank" ><AssignmentIcon /><span>Resume</span></Link></li>
-                    <li><Link to="/contact-me" ><ContactPhoneIcon /><span>contact me</span></Link></li>
+                    <li><NavLink to="/"><HomeIcon /><span>Home</span></NavLink></li>
+                    <li><NavLink to="/portfolio"><AccountTreeIcon /><span>Portfolio</span></NavLink></li>
+                    <li><NavLink to={resume} target="_blank" ><AssignmentIcon /><span>Resume</span></NavLink></li>
+                    <li><NavLink to="/contact-me" ><ContactPhoneIcon /><span>contact me</span></NavLink></li>
                 </ul>
             </nav>
         </header>

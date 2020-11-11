@@ -1,53 +1,82 @@
 @import '../../common/commonStylesheet.scss';
 
-.homepage {
-  margin: 0 auto;
-  min-width: 500px;
-  max-width: 900px;
-  &-main {
-    display: flex;
-    justify-content: space-between;
-    // background: darkblue;
-    position: absolute;
-    top: 220px;
-    &-left {
-      flex-shrink: 0;
-      margin-right: 100px;
-      > img {
-        height: 350px;
-        border-radius: 50%;
-        border: 1px solid white;
+.portfolio {
+  overflow: auto;
+  width: 1000px;
+  margin: 100px auto 0;
+  &-item {
+    position: relative;
+    margin-bottom: 100px;
+    &-pic {
+      border: 2px solid white;
+      width: 750px;
+      border-radius: 13px;
+      overflow: hidden;
+      img {
+        object-fit: contain;
+        width: 100%;
       }
     }
-    &-right {
-      // background: lightblue;
-      color: white;
-      // font-family: 'Comic Sans MS', cursive, sans-serif;
-      > h3 {
-        // margin-top: 30px;
-        font-size: 24px;
-        font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    &-details {
+      border-radius: 5px;
+      width: 550px;
+      height: 200px;
+      position: absolute;
+      z-index: 3;
+      right: 0;
+      bottom: 50px;
+      background: white;
+      padding: 20px;
+      border: 1px solid #cecece;
+      h3 {
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #325efe;
+        border-bottom: 1px solid #cecece;
+        // &::after {
+        //   content: '';
+        //   width: 30%;
+        //   display: block;
+        // }
       }
-      > p {
-        text-transform: capitalize;
-        margin-top: 50px;
-        font-size: 36px;
-        font-family: 'Arial Black', Gadget, sans-serif;
+      span {
+        float: right;
+        margin-top: 10px;
+        background: #e33e33;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
       }
-      &-links {
-        display: flex;
-        margin-top: 50px;
-        > li {
-          margin-right: 20px;
+      p {
+        line-height: 28px;
+        &:nth-of-type(2) {
+          text-decoration: underline;
         }
+        margin-bottom: 15px;
       }
-      &-button {
-        margin-top: 50px;
-        > button {
-          padding: 10px 20px;
-          background: #325eff;
-          border-radius: 20px;
-        }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .portfolio {
+    width: 95%;
+    min-width: 700px;
+    &-item {
+      background: white;
+      border: 2px solid white;
+      border-radius: 20px;
+      overflow: hidden;
+      &-pic {
+        border: none;
+        width: 101%;
+        border-radius: 0;
+        // border-bottom: 1px solid #cecece;
+      }
+      &-details {
+        width: 97%;
+        position: static;
+        border-radius: 0;
+        border: none;
       }
     }
   }

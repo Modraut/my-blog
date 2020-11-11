@@ -22,7 +22,13 @@
         box-sizing: border-box;
         border-top: 2px solid transparent;
         cursor: pointer;
-
+        &.active {
+          transition: all 0.2s ease-out;
+          opacity: 0.8;
+          // background: white;
+          color: #325eff;
+          border-top: 2px solid white;
+        }
         &:hover {
           transition: all 0.2s ease-out;
           opacity: 0.8;

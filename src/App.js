@@ -7,6 +7,8 @@ import { Homepage } from './pages/Homepage';
 // import './style.scss';
 import {BackgroundImage} from "./common/components/backgroundImage/index";
 import {Resume} from './pages/Resume';
+import { Portfolio } from './pages/Portfolio';
+import { ContactMe } from './pages/ContactMe';
 
 function App() {
   return (
@@ -15,8 +17,9 @@ function App() {
       <main>
         <Switch>
           <Route path="resume" component={Resume} />
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/contact-me" component={ContactMe} />
           <Route path="/" component={Homepage} />
-
         </Switch>
       </main>
       <BackgroundImage />
