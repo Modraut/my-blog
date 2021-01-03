@@ -19,7 +19,7 @@ export const Navbar = () => {
                     <li><NavLink to="/"><HomeIcon /><span>Home</span></NavLink></li>
                     <li><NavLink to="/portfolio"><AccountTreeIcon /><span>Portfolio</span></NavLink></li>
                     <li><NavLink to={resume} target="_blank" ><AssignmentIcon /><span>Resume</span></NavLink></li>
-                    <li><NavLink to="/contact-me" ><ContactPhoneIcon /><span>contact me</span></NavLink></li>
+                    <li><NavLink to="/contact-me" ><ContactPhoneIcon /><span>Contact Me</span></NavLink></li>
                 </ul>
             </nav>
         </header>
