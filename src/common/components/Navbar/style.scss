@@ -1,13 +1,24 @@
 // @import '../commonStylesheet.scss';
 
 .navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.3s ease-out;
+  &.solid {
+    background: #fae596;
+    // background: #36b4f1;
+    // background: #f0f01d;
+    color: #4b4b4c;
+    transition: all 0.3s ease-in;
+  }
   > nav {
     width: 80%;
     margin: 0 auto;
     min-width: 600px;
     > ul {
       // background: lightblue;
-      color: white;
+      // color: #4b4b4c;
       display: flex;
       height: 70px;
       // border-bottom: 1px solid #cecece;
@@ -43,6 +54,7 @@
       }
     }
   }
+
   @media (max-width: 800px) {
     li > a {
       > svg {

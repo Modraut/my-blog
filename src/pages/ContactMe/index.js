@@ -7,64 +7,107 @@ import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPaperclip, faEnvelopeSquare  } from '@fortawesome/free-solid-svg-icons';
 import portrait from "../../common/assets/images/Homepage/portrait.jpeg";
 import { Link } from "react-router-dom";
-import { TextField } from '@material-ui/core';
+import { TextField, FormControl, InputLabel, Input, FormHelperText  } from '@material-ui/core';
+
+import swal from "sweetalert"
+
 
 import emailjs, { init } from 'emailjs-com';
+import { useForm } from "./components/useForm";
 init("user_87wcUEfSSEsLb90flVDmu");
 
 
 export const ContactMe = () => {
+
+  const initialValues = {
+    name: "",
+    email: "",
+    message: ""
+  }
+
+  const validatation = (fieldValues = values) =>{
+    let temp = {...errors};
+    if('name' in fieldValues)
+      temp.name = fieldValues.name!==""? "": "Your name can't be empty";
+    if('email' in fieldValues)
+      temp.email = (/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/).test(fieldValues.email)? "": "This is not a valie email address";
+    if('message' in fieldValues)
+      temp.message = fieldValues.message.length>=10? "": "The message should be at least 10 letters"
+    setErrors({
+      ...temp
+    })
+    return Object.values(temp).every(x => x==0)
+  }
+
+
+  const {
+    values,
+    setValues,
+    errors,
+    setErrors,
+    hasSubmitted,
+    setHasSubmitted,
+    handleInputChange,
+    resetForm
+  } = useForm(initialValues, validatation);
+
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    emailjs.sendForm('gmail','template_was8zam', e.target )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-    }, (err) => {
-      console.log('FAILED...', err);
-    });
+    e.preventDefault();
+    if(validatation()){
+      emailjs.sendForm('gmail','template_was8zam', e.target )
+      .then((response) => {
+        // success: reset form and show success confirmed page
+        resetForm()
+        console.log('SUCCESS!', response.status, response.text);
+        swal("Awsome!", "Message sent. Thank you for letting me know", "success")
+      }, (err) => {
+        // failure not caused by incorrect inputs: keep the inputs and show failure page
+        console.log('FAILED...', err);
+        swal("Oops!", "Something went wrong", "error")
+
+      });
+    }else{
+      // failure due to incorrect inputs
+      setHasSubmitted(true) // validate onChange only after submission failed
+    }
   }
   return(
     <form className="contactMe" onSubmit={(e)=>handleSubmit(e)}>
       <h3>Contact Me</h3>
       <TextField 
+        onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off"
         label="Your Name"
-        variant="outlined"
+        value={values.name}
         name="name"
-        fullWidth="true"
+        error={errors.name && errors.name!=""? true: false}
+        helperText={errors.name}
       />
       <TextField
+        onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Email Address"
-        variant="outlined"
+        value={values.email}
         name="email"
-        fullWidth="true"
-      />
+        error={errors.email && errors.email!=""? true: false}
+        helperText={errors.email}
+        />
       <TextField
+        onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Message"
-        variant="outlined"
+        value={values.message}
         name="message"
-        fullWidth="true"
-        multiline="true"
+        multiline={true}
         rows="4"
         rowsMax="4"
         placeholder="Type your message here..."
+        error={errors.message && errors.message!=""? true: false}
+        helperText={errors.message}
       />
-      {/* <div className="contactMe-name">
-        <label for="name" >Your Name</label>
-        <input id="name" name="name" />
-      </div>
-      <div className="contactMe-email">
-        <label for="email">Email address</label>
-        <input id="email" name="email" />
-      </div>
-      <div className="contactMe-message">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" />
-      </div> */}
       <input
         className="contactMe-submit"
         type="submit"
         value="Send Message"
       />
     </form>
+
   )
 }

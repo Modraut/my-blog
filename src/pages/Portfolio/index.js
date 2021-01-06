@@ -16,7 +16,7 @@ export const Portfolio = () => {
     {
       type: "Commercial Project",
       title: "InnerArt_InnerSoul",
-      description: "Pulp You Media is developing this website as a platform for artists to present and sell their artworks to buyer",
+      description: "Pulp You Media is developing this website as a platform for artists to present and sell their artworks to buyers",
       stack: "HTML, CSS/SASS, React/Redux/Hooks, node.js",
       pic: iais
     },
@@ -47,7 +47,6 @@ export const Portfolio = () => {
   ]
   return(
     <div className="portfolio">
-
       {
         projects.map((item)=>{
           const {type, title, description, stack, pic, github } = item;

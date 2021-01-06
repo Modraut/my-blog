@@ -7,11 +7,10 @@
   font-size: 30px;
   width: 450px;
   margin: 0 auto;
-  height: 550px;
+  height: 600px;
   border-radius: 5px;
   padding: 50px 40px;
   box-sizing: border-box;
-  margin-top: 50px;
   h3 {
     font-size: 35px;
     text-align: center;
@@ -29,5 +28,6 @@
     color: #eeeeee;
     font-size: 16px;
     border: none;
+    cursor: pointer;
   }
 }

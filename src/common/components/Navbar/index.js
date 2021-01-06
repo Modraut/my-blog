@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter, NavLink } from "react-router-dom";
 import logo from '../../assets/images/Navbar/logo.png';
 import './style.scss';
@@ -11,8 +11,26 @@ import resume from "../../assets/documents/Chad.Liu_CV.pdf"
 
 
 export const Navbar = () => {
+    
+    const [ transparentNavbar, setTransparentNavbar ] = useState(true);
+    const handleTransparency = () =>{
+        const distanceFromTop = window.scrollY;
+        // console.log(distanceFromTop);
+        if (transparentNavbar && distanceFromTop!==0) {
+            setTransparentNavbar(false)
+        }
+        if(distanceFromTop==0){
+            setTransparentNavbar(true)
+        }
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', handleTransparency);
+    }, [])
+
+
+
     return(
-        <header className="navbar">
+        <header className={transparentNavbar? "navbar": "navbar solid"}>
             <nav>
                 <ul>
                     {/* <li><img src={logo} alt="logo missing" /></li> */}
