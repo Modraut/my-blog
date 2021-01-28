@@ -44,11 +44,16 @@
       }
       &-button {
         margin-top: 50px;
-        > button {
+        > a {
           padding: 10px 20px;
           // background: #325eff;
           background: #2b84ff;
           border-radius: 20px;
+          cursor: pointer;
+          button {
+            background: inherit;
+            cursor: inherit;
+          }
         }
       }
     }
