@@ -1,16 +1,16 @@
 @import '../../common/commonStylesheet.scss';
 
 .portfolio {
-  width: 1000px;
+  width: 60rem;
   margin: 0 auto;
-  padding: 20px 0 100px;
-  &-item {
+  padding: 1.25rem 0 6rem;
+  &__item {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 6rem;
 
-    &-pic {
+    &__pic {
       border: 2px solid white;
-      width: 750px;
+      width: 45rem;
       border-radius: 13px;
       overflow: hidden;
       img {
@@ -18,20 +18,20 @@
         width: 100%;
       }
     }
-    &-details {
+    &__details {
       border-radius: 5px;
-      width: 550px;
-      height: 200px;
+      width: 35rem;
+      height: 13rem;
       position: absolute;
       z-index: 3;
       right: 0;
-      bottom: 50px;
+      bottom: 3rem;
       background: white;
-      padding: 20px;
+      padding: 1.25rem;
       border: 1px solid #cecece;
       h3 {
-        font-size: 30px;
-        margin-bottom: 30px;
+        font-size: 2rem;
+        margin-bottom: 2rem;
         color: #325efe;
         border-bottom: 1px solid #cecece;
         // &::after {
@@ -42,23 +42,23 @@
       }
       span {
         float: right;
-        margin-top: 10px;
+        margin-top: 0.7rem;
         background: #e33e33;
         color: white;
-        padding: 10px;
+        padding: 0.6rem;
         border-radius: 5px;
       }
       p {
-        line-height: 28px;
+        line-height: 1.75rem;
         &:nth-of-type(2) {
           text-decoration: underline;
         }
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
       }
       a {
-        padding-right: 10px;
+        padding-right: 0.6rem;
         &:nth-of-type(2) {
-          font-size: 14px;
+          font-size: 0.9rem;
           position: relative;
           top: -2px;
         }
@@ -66,22 +66,22 @@
     }
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 60rem) {
   .portfolio {
     width: 95%;
-    min-width: 700px;
-    &-item {
+    min-width: 45rem;
+    &__item {
       background: white;
       border: 2px solid white;
       border-radius: 20px;
       overflow: hidden;
-      &-pic {
+      &__pic {
         border: none;
         width: 101%;
         border-radius: 0;
         // border-bottom: 1px solid #cecece;
       }
-      &-details {
+      &__details {
         width: 97%;
         position: static;
         border-radius: 0;

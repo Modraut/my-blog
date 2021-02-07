@@ -64,12 +64,12 @@ export const Portfolio = () => {
         projects.map((item)=>{
           const {type, title, description, stack, pic, github, website } = item;
           return(
-            <section className="portfolio-item">
-              <div className="portfolio-item-pic">
+            <section className="portfolio__item">
+              <div className="portfolio__item__pic">
                 <img  src={pic} alt="" />
-                <div className="portfolio-item-pic-cover"/>
+                <div className="portfolio__item__pic__cover"/>
               </div>
-              <div className="portfolio-item-details" >
+              <div className="portfolio__item__details" >
                 <span>{type} </span>
                 <h3>{title} </h3>
                 <p>{description} </p>

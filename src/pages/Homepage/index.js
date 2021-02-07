@@ -12,14 +12,14 @@ import { Link, NavLink } from "react-router-dom";
 export const Homepage = () => {
   return(
     <div className="homepage">
-      <div className="homepage-main">
-        <div className="homepage-main-left">
-          <img src={portrait} /> 
+      <div className="homepage__main">
+        <div className="homepage__main__portrait">
+          <img src={portrait} alt="portrait missing" /> 
         </div>  
-        <div className="homepage-main-right">
+        <div className="homepage__main__right">
           <h3>Hello, I'm Chad Liu</h3>
           <p>I'm a passionate full-stack web developer</p>
-          <ul className="homepage-main-right-links">
+          <ul className="homepage__main__right__links">
             <li><a href="https://github.com/Modraut?tab=repositories" target="_blank" >
               <FontAwesomeIcon size="3x" icon={faGithubSquare} color="#CECECE" />
             </a></li>
@@ -29,11 +29,11 @@ export const Homepage = () => {
             <li><Link to="/resume">
               <FontAwesomeIcon size="3x" icon={faPaperclip} color="#EC2F78" />
             </Link></li>
-            <li><Link to="/contact-me">
+            <li><Link to="/contact__me">
               <FontAwesomeIcon size="3x" icon={faEnvelopeSquare} color="#DB4438" />
             </Link></li>
           </ul>
-          <div className="homepage-main-right-button">
+          <div className="homepage__main__right__button">
             <NavLink to="/portfolio"><button>Read More</button></NavLink>
           </div>
         </div>  

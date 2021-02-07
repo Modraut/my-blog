@@ -7,7 +7,7 @@ import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPaperclip, faEnvelopeSquare  } from '@fortawesome/free-solid-svg-icons';
 import portrait from "../../common/assets/images/Homepage/portrait.jpeg";
 import { Link } from "react-router-dom";
-import { TextField, FormControl, InputLabel, Input, FormHelperText  } from '@material-ui/core';
+import { TextField, FormControl, InputLabel, Input, FormHelperText, makeStyles  } from '@material-ui/core';
 
 import swal from "sweetalert"
 
@@ -74,7 +74,8 @@ export const ContactMe = () => {
   return(
     <form className="contactMe" onSubmit={(e)=>handleSubmit(e)}>
       <h3>Contact Me</h3>
-      <TextField 
+      <TextField
+        className="contactMe__input"
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off"
         label="Your Name"
         value={values.name}
@@ -83,6 +84,7 @@ export const ContactMe = () => {
         helperText={errors.name}
       />
       <TextField
+        className="contactMe__input"
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Email Address"
         value={values.email}
@@ -91,6 +93,7 @@ export const ContactMe = () => {
         helperText={errors.email}
         />
       <TextField
+        className="contactMe__input"
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Message"
         value={values.message}
@@ -103,7 +106,7 @@ export const ContactMe = () => {
         helperText={errors.message}
       />
       <input
-        className="contactMe-submit"
+        className="contactMe__submit"
         type="submit"
         value="Send Message"
       />

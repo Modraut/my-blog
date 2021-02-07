@@ -2,50 +2,50 @@
 
 .homepage {
   margin: 0 auto;
-  min-width: 500px;
-  max-width: 900px;
-  &-main {
+  min-width: 30rem;
+  max-width: 55rem;
+  &__main {
     display: flex;
     justify-content: space-between;
     // background: darkblue;
-    padding-top: 70px;
+    padding-top: 4.5rem;
     // position: absolute;
     // top: 220px;
-    &-left {
+    &__portrait {
       flex-shrink: 0;
-      margin-right: 100px;
+      margin-right: 6rem;
       > img {
-        height: 350px;
+        height: 20rem;
         border-radius: 50%;
         border: 1px solid white;
       }
     }
-    &-right {
+    &__right {
       // background: lightblue;
       color: white;
       // font-family: 'Comic Sans MS', cursive, sans-serif;
       > h3 {
         // margin-top: 30px;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
       }
       > p {
         text-transform: capitalize;
-        margin-top: 50px;
-        font-size: 36px;
+        margin-top: 3rem;
+        font-size: 2.5rem;
         font-family: 'Arial Black', Gadget, sans-serif;
       }
-      &-links {
+      &__links {
         display: flex;
-        margin-top: 50px;
+        margin-top: 3rem;
         > li {
-          margin-right: 20px;
+          margin-right: 1.25rem;
         }
       }
-      &-button {
-        margin-top: 50px;
+      &__button {
+        margin-top: 3rem;
         > a {
-          padding: 10px 20px;
+          padding: 0.6rem 1.25rem;
           // background: #325eff;
           background: #2b84ff;
           border-radius: 20px;
