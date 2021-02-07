@@ -13,6 +13,11 @@
     color: #4b4b4c;
     transition: all 0.3s ease-in;
   }
+  @media (max-width: 500px) {
+    background: #fae596;
+    color: #4b4b4c;
+    transition: all 0.3s ease-in;
+  }
   > nav {
     width: 80%;
     margin: 0 auto;
@@ -25,6 +30,9 @@
       // border-bottom: 1px solid #cecece;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: 500px) {
+        height: 6rem;
+      }
       li {
         height: 100%;
         // line-height: 50px;
@@ -34,6 +42,7 @@
         box-sizing: border-box;
         border-top: 2px solid transparent;
         cursor: pointer;
+
         &.active {
           transition: all 0.2s ease-out;
           opacity: 0.8;
@@ -51,15 +60,10 @@
         svg {
           float: left;
           margin-right: 10px;
+          @media (max-width: 900px) {
+            display: none;
+          }
         }
-      }
-    }
-  }
-
-  @media (max-width: 55rem) {
-    li > a {
-      > svg {
-        display: none;
       }
     }
   }

@@ -16,6 +16,12 @@ import emailjs, { init } from 'emailjs-com';
 import { useForm } from "./components/useForm";
 init("user_87wcUEfSSEsLb90flVDmu");
 
+const useStyle = makeStyles(theme=>({
+  inputStyle: {
+    fontSize: "1.5rem"
+  }
+}))
+
 
 export const ContactMe = () => {
 
@@ -71,29 +77,33 @@ export const ContactMe = () => {
       setHasSubmitted(true) // validate onChange only after submission failed
     }
   }
+  const classes = useStyle()
   return(
     <form className="contactMe" onSubmit={(e)=>handleSubmit(e)}>
       <h3>Contact Me</h3>
       <TextField
-        className="contactMe__input"
+        // className={classes.inputStyle}
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off"
         label="Your Name"
         value={values.name}
         name="name"
         error={errors.name && errors.name!=""? true: false}
         helperText={errors.name}
+        // size={window.innerWidth<500? "small": "medium"}
+        font
       />
       <TextField
-        className="contactMe__input"
+        // className="contactMe__input"
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Email Address"
         value={values.email}
         name="email"
         error={errors.email && errors.email!=""? true: false}
         helperText={errors.email}
+        // size={window.innerWidth<500? "small": "medium"}
         />
       <TextField
-        className="contactMe__input"
+        // className="contactMe__input"
         onChange={handleInputChange} variant="outlined" fullWidth={true} autoComplete="off" 
         label="Message"
         value={values.message}
@@ -104,6 +114,7 @@ export const ContactMe = () => {
         placeholder="Type your message here..."
         error={errors.message && errors.message!=""? true: false}
         helperText={errors.message}
+        // size={window.innerWidth<500? "small": "medium"}
       />
       <input
         className="contactMe__submit"
