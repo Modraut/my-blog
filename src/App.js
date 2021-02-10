@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './globalStyle.scss';
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Navbar } from './common/components/Navbar';
 import { Homepage } from './pages/Homepage';
 // import './style.scss';
@@ -20,7 +20,8 @@ function App() {
           <Route path="resume" component={Resume} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/contact-me" component={ContactMe} />
-          <Route path="/" component={Homepage} />
+          <Route path="/home" component={Homepage} />
+          <Route path="/" component={()=> (<Redirect to="/home" />)} />
         </Switch>
       </main>
       {/* <BackgroundImage /> */}

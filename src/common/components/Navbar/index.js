@@ -7,39 +7,67 @@ import AccountTreeIcon from '@material-ui/icons/AccountTree';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 import resume from "../../assets/documents/Chad.Liu_CV.pdf"
+import { Fragment } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAlignJustify, faUser, faFolderOpen, faToolbox, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { debounce } from "utilities/helper";
+
 
 
 
 export const Navbar = () => {
-    
-    const [ transparentNavbar, setTransparentNavbar ] = useState(true);
-    const handleTransparency = () =>{
-        const distanceFromTop = window.scrollY;
-        // console.log(distanceFromTop);
-        if (transparentNavbar && distanceFromTop!==0) {
-            setTransparentNavbar(false)
+    let preScrollPos = 0;
+    const [ visibleNavbar, setVisibleNavbar ] = useState(true);
+    const handleScroll = () =>{
+        const currentScrollPos = window.pageYOffset;
+
+        if(preScrollPos > currentScrollPos && (preScrollPos - currentScrollPos)>5 || currentScrollPos <=30 ){
+            setVisibleNavbar(true)
         }
-        if(distanceFromTop==0){
-            setTransparentNavbar(true)
+        if(preScrollPos < currentScrollPos && (currentScrollPos - preScrollPos)>5){
+            setVisibleNavbar(false)
         }
+        if(preScrollPos==currentScrollPos){
+            setTimeout(() => {
+                setVisibleNavbar(false)
+            }, 1000);
+        }
+        preScrollPos = currentScrollPos
     }
     useEffect(()=>{
-        window.addEventListener('scroll', handleTransparency);
+        window.addEventListener('scroll', handleScroll);
+        return() => window.removeEventListener("scroll", handleScroll)
     }, [])
 
 
 
     return(
-        <header className={transparentNavbar? "navbar": "navbar solid"}>
-            <nav>
-                <ul>
-                    {/* <li><img src={logo} alt="logo missing" /></li> */}
-                    <li><NavLink to="/"><HomeIcon /><span>Home</span></NavLink></li>
-                    <li><NavLink to="/portfolio"><AccountTreeIcon /><span>Portfolio</span></NavLink></li>
-                    <li><NavLink to={resume} target="_blank" ><AssignmentIcon /><span>Resume</span></NavLink></li>
-                    <li><NavLink to="/contact-me" ><ContactPhoneIcon /><span>Contact Me</span></NavLink></li>
-                </ul>
-            </nav>
-        </header>
+        <Fragment>
+            <header className={visibleNavbar? "navbar":"navbar hide" }>
+                <nav>
+                    <ul>
+                        {/* <li><img src={logo} alt="logo missing" /></li> */}
+                        <li><NavLink to="/home" activeClassName="active" >
+                            <FontAwesomeIcon size="0.5x" icon={faUser} /><span>Home</span>
+                        </NavLink></li>
+                        <li><NavLink to="/portfolio">
+                            <FontAwesomeIcon size="0.5x" icon={faFolderOpen} /><span>Portfolio</span>
+                        </NavLink></li>
+                        <li><NavLink to={resume} target="_blank" >
+                            <FontAwesomeIcon size="0.5x" icon={faToolbox} /><span>Resume</span>
+                        </NavLink></li>
+                        <li><NavLink to="/contact-me" >
+                            <FontAwesomeIcon size="0.5x" icon={faEnvelope} /><span>Contact Me</span>
+                        </NavLink></li>
+                    </ul>
+                </nav>
+            </header>
+            <div className="miniNav" >
+                <FontAwesomeIcon
+                    size='sm' 
+                    icon={faAlignJustify}
+                />
+            </div>
+        </Fragment>
     )
 }

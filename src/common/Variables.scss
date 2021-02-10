@@ -1,36 +1,36 @@
-@function toRem($px){
-  @return ($px/16)*1rem
-};
+@function toRem($px) {
+  @return ($px/16) * 1rem;
+}
+
+$color-nav-bg: #444444;
 
 $color-orange: #ea6f5a;
 $color-grey-font: #969696;
 $color-grey-border-bottom: #f0f0f0;
 $color-grey-input-placeholder: #cfd4e6;
-$color-green:#7db343;
-$color-blue-green:#008FB4;
+$color-green: #7db343;
+$color-blue-green: #008fb4;
 $color-grey-button: #545a77;
-$color-grey-1: #f6f8fd;  // button background
+$color-grey-1: #f6f8fd; // button background
 $color-grey-input-border: #bbc2dc;
 $color-button-pink: #e0446d;
 $color-font-grey: #545a77;
-$color-font-black: #292B32;
+$color-font-black: #292b32;
 $color-green-blue: #008fb4;
 $color-border-grey: #c3c9e0;
-
 
 $border-radius-header-button: 19px;
 $margin-top-header-li: 0.5rem;
 //The page is divided into 3 parts for both header and body
-// $width-middle: toRem(800);  
-
+// $width-middle: toRem(800);
 
 //responsive plan
 
 // Navbar - not used now
-$width-navbar-max: 65rem;  // equals 1040px. max size for screen width > 1060px
-$width-navbar-user: 820px; // screen width < 840px at user mode 
+$width-navbar-max: 65rem; // equals 1040px. max size for screen width > 1060px
+$width-navbar-user: 820px; // screen width < 840px at user mode
 $width-navbar-visitor: 900px; // screen width < 920px at visitor mode
-// For further responsive, it should be 100% if Navbar switches to simple mode. 
+// For further responsive, it should be 100% if Navbar switches to simple mode.
 $width-navbar-min: 20rem; // 320px. min size
 
 // HomePanel
@@ -39,12 +39,4 @@ $width-homePanel_1: 2.5rem; // use smaller font size for screen width < 920px
 
 // PrivateUserProfile
 $width-privateUserProfile_max: 68rem; // Equals 1040px. max size
-$width-privateUserProfile: 100%; // For screen width less than 1060. 
-
-
-
-
-
-
-
-
+$width-privateUserProfile: 100%; // For screen width less than 1060.
