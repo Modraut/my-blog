@@ -47,7 +47,7 @@ export const Portfolio = () => {
       stack: "HTML, CSS/SASS, Material UI, Pokemon API, cookies",
       pic: pokemondic,
       github: "https://github.com/Modraut/PokemonDic",
-      website: "http://pokemondic-env.eba-uuar5sjq.ap-southeast-2.elasticbeanstalk.com/home"
+      website: "http://54.206.119.163/"
     },
     {
       title: "Jianshu",
