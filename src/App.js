@@ -6,7 +6,7 @@ import { Navbar } from './common/components/Navbar';
 import { Homepage } from './pages/Homepage';
 // import './style.scss';
 // import {BackgroundImage} from "./common/components/backgroundImage/index";
-import {Resume} from './pages/Resume';
+import { Resume } from './pages/Resume';
 import { Portfolio } from './pages/Portfolio';
 import { ContactMe } from './pages/ContactMe';
 import './style.scss'
@@ -20,8 +20,7 @@ function App() {
           <Route path="resume" component={Resume} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/contact-me" component={ContactMe} />
-          <Route path="/home" component={Homepage} />
-          <Route path="/" component={()=> (<Redirect to="/home" />)} />
+          <Route exact path="/" component={Homepage} />
         </Switch>
       </main>
       {/* <BackgroundImage /> */}
