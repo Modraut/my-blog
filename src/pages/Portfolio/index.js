@@ -28,7 +28,7 @@ export const Portfolio = () => {
       stack: "HTML, CSS/SASS, React/Redux/Hooks",
       pic: myBlog,
       github: "https://github.com/Modraut/my-blog",
-      website: "http://my-blog-osvqq.ondigitalocean.app/"
+      website: "https://my-blog-osvqq.ondigitalocean.app/"
     },
     {
       title: "PokemonDic",
@@ -46,7 +46,7 @@ export const Portfolio = () => {
       stack: "HTML, CSS/SASS, React/Redux/thunk, express, JWT",
       pic: handytasker,
       github: "https://github.com/Modraut/Handytasker_frontend",
-      website: "http://3.26.78.56/"
+      website: "http://128.199.158.101/"
     },
     {
       title: "Jianshu",
@@ -61,7 +61,7 @@ export const Portfolio = () => {
     <div className="portfolio">
       {
         projects.map((item) => {
-          const { type, title, description, stack, pic, github, website } = item;
+          const { type, title, description, stack, pic, github, website = null } = item;
           return (
             <section className="portfolio__item">
               <div className="portfolio__item__pic">
@@ -76,9 +76,11 @@ export const Portfolio = () => {
                 <a href={github} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon size="2x" icon={faGithubSquare} color="#CECECE" />
                 </a>
-                <a href={website} target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon size="2x" icon={faLink} color="#CECECE" />
-                </a>
+                {
+                  website && <a href={website} target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon size="2x" icon={faLink} color="#CECECE" />
+                  </a>
+                }
               </div>
             </section>
           )

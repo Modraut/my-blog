@@ -17,10 +17,10 @@ function App() {
       <Navbar />
       <main className="app__main">
         <Switch>
-          <Route path="resume" component={Resume} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact-me" component={ContactMe} />
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/resume" component={Resume} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/contact-me" component={ContactMe} />
+          <Route path="/" component={Homepage} />
         </Switch>
       </main>
       {/* <BackgroundImage /> */}
