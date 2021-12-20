@@ -43,7 +43,7 @@ export const Navbar = () => {
     const List = () => (
         <ul>
             {/* <li><img src={logo} alt="logo missing" /></li> */}
-            <li><NavLink to="/" activeClassName="active" >
+            <li><NavLink to="/" activeClassName="active" exact >
                 <FontAwesomeIcon size="0.5x" icon={faUser} /><span>Home</span>
             </NavLink></li>
             <li><NavLink to="/portfolio">

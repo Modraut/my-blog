@@ -66,10 +66,10 @@
     }
   }
 }
-@media (max-width: 60rem) {
+// @media (max-width: 60rem) {
   .portfolio {
-    width: 95%;
-    min-width: 45rem;
+    // width: 95%;
+    // min-width: 45rem;
     &__item {
       background: white;
       border: 2px solid white;
@@ -88,5 +88,12 @@
         border: none;
       }
     }
+  }
+// }
+
+
+@media (max-width: 60rem) {
+  .portfolio {
+    width: 95%;
   }
 }
